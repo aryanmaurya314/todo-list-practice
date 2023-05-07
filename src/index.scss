@@ -1,0 +1,54 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+:root {
+  --color-primary: #e64848;
+
+  --color-secondary-light: #55a44e;
+  --color-secondary-dark: #388e3c;
+
+  --color-grey-light: #f7f7f7;
+  --color-grey: #eee;
+  --color-grey-dark: #e2dada;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  font-family: Helvetica, Arial, sans-serif;
+  font-weight: 400;
+
+  max-width: 80rem;
+  margin: auto;
+  min-height: 100vh;
+  background-color: var(--color-primary);
+  text-align: center;
+}
+
+h1 {
+  color: var(--color-grey-light);
+  margin: 2rem 0;
+  font-size: 5rem;
+  font-weight: 400;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
