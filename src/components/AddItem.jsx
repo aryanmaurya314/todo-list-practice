@@ -12,6 +12,7 @@ const AddItem = ({ addItem, setAddItem, handleSubmit }) => {
           className="form__input"
           name="addItemInput"
           placeholder="Get groceries"
+          required
           value={addItem}
           onChange={(e) => setAddItem(e.target.value)}
         />

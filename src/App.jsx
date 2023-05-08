@@ -1,23 +1,24 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import AddItem from './components/AddItem';
 import List from './components/List';
 
 const App = () => {
   const [addItem, setAddItem] = useState('');
-  const [items, setItems] = useState([
-    { id: 1, item: 'Milk' },
-    { id: 2, item: 'Bread' },
-    { id: 3, item: 'Butter' },
-  ]);
+  const [items, setItems] = useState(
+    JSON.parse(localStorage.getItem('todoList')) || []
+  );
 
-  const handleSubmit = (e) => {
+  useEffect(() => {
+    localStorage.setItem('todoList', JSON.stringify(items));
+  }, [items]);
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const newItem = {
-      id: items[items.length - 1].id + 1,
+      id: items.length ? items[0].id + 1 : 1,
       item: addItem,
     };
-
-    const updatedList = [...items, newItem];
+    const updatedList = [newItem, ...items];
     setItems(updatedList);
     setAddItem('');
   };
