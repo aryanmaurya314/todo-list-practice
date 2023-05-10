@@ -65,9 +65,21 @@
   }
 
   &__item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
     width: 100%;
     background-color: var(--color-grey-dark);
     padding: 0.7rem;
+    padding-left: 3rem;
     border-radius: 2px;
+  }
+  &__btn {
+    background-color: #000;
+    color: var(--color-grey-light);
+    border: none;
+    padding: 0.5rem;
+    border-radius: 5px;
+    cursor: pointer;
   }
 }
